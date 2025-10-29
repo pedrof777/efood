@@ -1,33 +1,44 @@
-import sushi from '../../assets/images/sushi.png'
-import estrela from '../../assets/images/estrela.svg'
 import * as S from './styles'
 import { ButtonLink } from '../Button/styles'
 import { TagContainer } from '../Tag/styles'
+import estrela from '../../assets/images/estrela.svg'
 
-const Produto = () => (
+type Props = {
+  image: string
+  category: string
+  info?: string
+  name: string
+  avaliation: string
+  description: string
+}
+
+const Produto = ({
+  avaliation,
+  category,
+  description,
+  image,
+  info,
+  name
+}: Props) => (
   <div className="container">
     <S.ContainerCard>
       <S.ContainerImg>
-        <img src={sushi} alt="sushi" />
+        <img src={image} alt="sushi" />
       </S.ContainerImg>
       <S.Infos>
-        <TagContainer position="primary">Destaque da semana</TagContainer>
-        <TagContainer position="secondary">Japonesa</TagContainer>
+        {info && <TagContainer position="primary">{info}</TagContainer>}
+        <TagContainer position="secondary">{category}</TagContainer>
       </S.Infos>
       <S.Card>
         <S.ContainerTitle>
-          <S.Title>Hioki Sushi</S.Title>
+          <S.Title>{name}</S.Title>
           <S.ContainerAvaliacao>
-            <p>4.9</p>
+            <p>{avaliation}</p>
             <img src={estrela} alt="estrela" />
           </S.ContainerAvaliacao>
         </S.ContainerTitle>
-        <S.TextCard>
-          Peça já o melhor da culinária japonesa no conforto da sua casa! Sushis
-          frescos, sashimis deliciosos e pratos quentes irresistíveis. Entrega
-          rápida, embalagens cuidadosas e qualidade garantida.
-          <br />
-          Experimente o Japão sem sair do lar com nosso delivery!
+        <S.TextCard style={{ whiteSpace: 'pre-line' }}>
+          {description}
         </S.TextCard>
         <ButtonLink title={'Saiba mais'} to={'/saibamais'}>
           Saiba mais

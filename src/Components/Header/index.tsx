@@ -1,8 +1,15 @@
 import imageFundo from '../../assets/images/fundoHeader.svg'
 import logo from '../../assets/images/logo.svg'
-import { FundoHeader, Logo, Title } from './styles'
+import {
+  FundoHeader,
+  Logo,
+  Title,
+  FundoHeaderFoods,
+  TextLeft,
+  TextRight
+} from './styles'
 
-const Header = () => (
+export const HeaderPrincipal = () => (
   <FundoHeader style={{ backgroundImage: `url(${imageFundo})` }}>
     <Logo style={{ backgroundImage: `url(${logo})` }}></Logo>
     <Title>
@@ -11,4 +18,10 @@ const Header = () => (
   </FundoHeader>
 )
 
-export default Header
+export const HeaderFoods = () => (
+  <FundoHeaderFoods style={{ backgroundImage: `url(${imageFundo})` }}>
+    <TextLeft to={'/'}>Restaurantes</TextLeft>
+    <Logo style={{ backgroundImage: `url(${logo})` }}></Logo>
+    <TextRight to={'/'}>0 Produto(s) no carrinho</TextRight>
+  </FundoHeaderFoods>
+)

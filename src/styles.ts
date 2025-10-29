@@ -15,7 +15,7 @@ export const GlobalCss = createGlobalStyle`
   }
 
   body{
-    background-color: ${Cores.laranjaClaro}
+    background-color: ${Cores.laranjaClaro};
   }
 
   .container{

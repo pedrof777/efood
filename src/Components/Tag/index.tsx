@@ -1,8 +1,10 @@
+import { ReactNode } from 'react'
+
 import { TagContainer } from './styles'
 
 export type Props = {
   position?: 'primary' | 'secondary'
-  children: string
+  children: ReactNode
 }
 
 const Tag = ({ children, position }: Props) => (

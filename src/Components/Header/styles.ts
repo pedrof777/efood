@@ -1,7 +1,8 @@
 import styled from 'styled-components'
 import { Cores } from '../../styles'
+import { Link } from 'react-router-dom'
 
-export const FundoHeader = styled.div`
+export const FundoHeader = styled.header`
   height: 384px;
   display: flex;
   background-size: cover;
@@ -23,4 +24,29 @@ export const Title = styled.p`
   font-size: 36px;
   text-align: center;
   margin-bottom: 40px;
+`
+//HeaderFOODS
+export const FundoHeaderFoods = styled(FundoHeader)`
+  height: 186px;
+  flex-direction: row;
+`
+
+export const TextLeft = styled(Link)`
+  margin-left: 171px;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 900;
+  color: ${Cores.laranja};
+`
+
+export const TextRight = styled(Link)`
+  margin-right: 171px;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 900;
+  color: ${Cores.laranja};
+`
+
+export const LogoFoods = styled(Logo)`
+  margin-top: 0px;
 `
