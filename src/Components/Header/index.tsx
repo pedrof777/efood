@@ -6,7 +6,8 @@ import {
   Title,
   FundoHeaderFoods,
   TextLeft,
-  TextRight
+  TextRight,
+  LogoFoods
 } from './styles'
 
 export const HeaderPrincipal = () => (
@@ -21,7 +22,7 @@ export const HeaderPrincipal = () => (
 export const HeaderFoods = () => (
   <FundoHeaderFoods style={{ backgroundImage: `url(${imageFundo})` }}>
     <TextLeft to={'/'}>Restaurantes</TextLeft>
-    <Logo style={{ backgroundImage: `url(${logo})` }}></Logo>
+    <LogoFoods style={{ backgroundImage: `url(${logo})` }}></LogoFoods>
     <TextRight to={'/'}>0 Produto(s) no carrinho</TextRight>
   </FundoHeaderFoods>
 )

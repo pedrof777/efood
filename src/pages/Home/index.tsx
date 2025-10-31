@@ -1,10 +1,10 @@
-import { HeaderFoods, HeaderPrincipal } from '../../Components/Header'
+import { HeaderPrincipal } from '../../Components/Header'
 import Productlist from '../../Components/ProductList'
 import Food from '../../models/Food'
 import sushi from '../../assets/images/sushi.png'
 import macarrao from '../../assets/images/macarrao.png'
 
-const restaurantes: Food[] = [
+export const restaurantes: Food[] = [
   {
     id: 1,
     avaliation: '4.9',
