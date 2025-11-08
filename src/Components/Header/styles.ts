@@ -31,16 +31,16 @@ export const FundoHeaderFoods = styled(FundoHeader)`
   flex-direction: row;
 `
 
-export const TextLeft = styled(Link)`
-  margin-left: 171px;
-  text-decoration: none;
-  font-size: 18px;
-  font-weight: 900;
-  color: ${Cores.laranja};
+export const ContainerHeaderFoods = styled.div`
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1024px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 `
 
-export const TextRight = styled(Link)`
-  margin-right: 171px;
+export const TextFood = styled(Link)`
   text-decoration: none;
   font-size: 18px;
   font-weight: 900;
