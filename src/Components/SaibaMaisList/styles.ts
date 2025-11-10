@@ -16,7 +16,7 @@ export const ContainerTitle = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 24px 0px 32px 170px;
+  padding: 24px 0px 32px 0px;
 `
 
 export const TitleCategory = styled.p`

@@ -17,7 +17,7 @@ const SaibaMaisList = ({ foods }: Props) => {
     <>
       <section>
         <FundoImg>
-          <ContainerTitle>
+          <ContainerTitle className="container">
             <TitleCategory>Italiana</TitleCategory>
             <NameRestaurante>La Dolce Vita Trattoria</NameRestaurante>
           </ContainerTitle>
