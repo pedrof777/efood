@@ -6,10 +6,11 @@ import estrela from '../../assets/images/estrela.svg'
 type Props = {
   image: string
   category: string
-  info?: string
+  info?: boolean
   name: string
-  avaliation: string
+  avaliation: number
   description: string
+  id: number
 }
 
 const Produto = ({
@@ -18,7 +19,8 @@ const Produto = ({
   description,
   image,
   info,
-  name
+  name,
+  id
 }: Props) => (
   <div className="container">
     <S.ContainerCard>
@@ -26,7 +28,11 @@ const Produto = ({
         <img src={image} alt="sushi" />
       </S.ContainerImg>
       <S.Infos>
-        {info && <TagContainer position="primary">{info}</TagContainer>}
+        {info && (
+          <TagContainer position="primary">
+            {info ? 'Destaque da semana' : null}
+          </TagContainer>
+        )}
         <TagContainer position="secondary">{category}</TagContainer>
       </S.Infos>
       <S.Card>
@@ -40,7 +46,7 @@ const Produto = ({
         <S.TextCard style={{ whiteSpace: 'pre-line' }}>
           {description}
         </S.TextCard>
-        <ButtonLink title={'Saiba mais'} to={'/saibamais'}>
+        <ButtonLink title={'Saiba mais'} to={`/saibamais/${id}`}>
           Saiba mais
         </ButtonLink>
       </S.Card>

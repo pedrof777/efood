@@ -1,4 +1,4 @@
-import Food from '../../models/Food'
+import { Food } from '../../pages/Home'
 import SaibaMaisProduct from '../SaibaMaisProduct'
 import {
   ContainerTitle,
@@ -9,27 +9,45 @@ import {
 } from './styles'
 
 type Props = {
-  foods: Food[]
+  foods: Food
+}
+
+export const formataValor = (preco = 0) => {
+  return new Intl.NumberFormat('pt-br', {
+    style: 'currency',
+    currency: 'BRL'
+  }).format(preco)
 }
 
 const SaibaMaisList = ({ foods }: Props) => {
+  if (!foods || !foods.cardapio) {
+    return null
+  }
   return (
     <>
       <section>
-        <FundoImg>
+        <FundoImg
+          style={{
+            backgroundImage: `
+            linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+            url(${foods.capa})`
+          }}
+        >
           <ContainerTitle className="container">
-            <TitleCategory>Italiana</TitleCategory>
-            <NameRestaurante>La Dolce Vita Trattoria</NameRestaurante>
+            <TitleCategory>{foods.tipo}</TitleCategory>
+            <NameRestaurante>{foods.titulo}</NameRestaurante>
           </ContainerTitle>
         </FundoImg>
         <div className="container">
           <ListProduct>
-            {foods.map((food) => (
+            {foods.cardapio.map((food) => (
               <SaibaMaisProduct
                 key={food.id}
-                description={food.description}
-                image={food.image}
-                title={food.name}
+                description={food.descricao}
+                image={food.foto}
+                title={food.nome}
+                porcao={food.porcao}
+                preco={formataValor(food.preco)}
               />
             ))}
           </ListProduct>

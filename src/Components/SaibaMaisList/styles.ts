@@ -1,15 +1,10 @@
 import styled from 'styled-components'
 
-import fundoSaibaMais from '../../assets/images/fundoSaibaMais.png'
-
 export const FundoImg = styled.div`
   height: 280px;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  background-image:
-    linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url(${fundoSaibaMais});
 `
 export const ContainerTitle = styled.div`
   height: 100%;
