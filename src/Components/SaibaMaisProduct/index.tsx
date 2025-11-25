@@ -63,7 +63,7 @@ const SaibaMaisProduct = ({
                 {description}
                 <br />
                 <br />
-                <span>{porcao}</span>
+                <span>Serve: {porcao}</span>
               </p>
               <ButtonModal>
                 Adicionar ao carrinho - <span>{preco}</span>

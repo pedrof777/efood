@@ -69,7 +69,7 @@ export const ModalContent = styled.div`
   background-color: ${Cores.laranja};
 `
 export const ModalImg = styled.div`
-  margin: 32px 24px 32px 32px;
+  margin: 32px 24px 32px 16px;
 
   img {
     width: 280px;
