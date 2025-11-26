@@ -9,7 +9,7 @@ import {
 } from './styles'
 
 type Props = {
-  foods: Food
+  foods?: Food
 }
 
 export const formataValor = (preco = 0) => {

@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useDispatch } from 'react-redux'
 
 import {
   Button,
@@ -16,8 +17,11 @@ import {
 } from './styles'
 
 import close from '../../assets/images/close.png'
+import { open, addToCart } from '../../stores/reducers/cart'
+import { Food } from '../../pages/Home'
 
 type Props = {
+  food?: Food
   image: string
   title: string
   description: string
@@ -30,9 +34,17 @@ const SaibaMaisProduct = ({
   image,
   title,
   porcao,
-  preco
+  preco,
+  food
 }: Props) => {
   const [modalAberto, setModalAberto] = useState(false)
+
+  const dispatch = useDispatch()
+
+  const addCart = () => {
+    dispatch(addToCart(food!))
+    dispatch(open())
+  }
 
   return (
     <>
@@ -65,7 +77,7 @@ const SaibaMaisProduct = ({
                 <br />
                 <span>Serve: {porcao}</span>
               </p>
-              <ButtonModal>
+              <ButtonModal type="button" onClick={addCart}>
                 Adicionar ao carrinho - <span>{preco}</span>
               </ButtonModal>
             </ModalText>

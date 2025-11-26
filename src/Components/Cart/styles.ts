@@ -23,6 +23,10 @@ export const CartContainer = styled.div`
   width: 100%;
   height: 100%;
   z-index: 1;
+
+  &.is-open {
+    display: flex;
+  }
 `
 
 export const AsideContainer = styled.aside`

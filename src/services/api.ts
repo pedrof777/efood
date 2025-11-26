@@ -7,10 +7,10 @@ const api = createApi({
   }),
   endpoints: (builder) => ({
     getRestaurantArray: builder.query<Food[], void>({
-      query: () => 'restaurante'
+      query: () => 'restaurantes'
     }),
-    getRestaurant: builder.query<Food, void>({
-      query: () => 'restaurante'
+    getRestaurant: builder.query<Food, string>({
+      query: (id) => `restaurantes/${id}`
     })
   })
 })

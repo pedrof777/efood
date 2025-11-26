@@ -25,7 +25,7 @@ export const NameRestaurante = styled.p`
   font-weight: 900;
   color: #fff;
 `
-export const ListProduct = styled.div`
+export const ListProduct = styled.ul`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 32px;

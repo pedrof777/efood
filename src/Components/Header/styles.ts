@@ -47,6 +47,16 @@ export const TextFood = styled(Link)`
   color: ${Cores.laranja};
 `
 
+export const TextFoodButton = styled.button`
+  border: none;
+  background-color: transparent;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 900;
+  color: ${Cores.laranja};
+  cursor: pointer;
+`
+
 export const LogoFoods = styled(Logo)`
   margin-top: 0px;
 `

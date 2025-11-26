@@ -1,3 +1,4 @@
+import { useDispatch } from 'react-redux'
 import imageFundo from '../../assets/images/fundoHeader.svg'
 import logo from '../../assets/images/logo.svg'
 import {
@@ -7,8 +8,10 @@ import {
   FundoHeaderFoods,
   LogoFoods,
   TextFood,
-  ContainerHeaderFoods
+  ContainerHeaderFoods,
+  TextFoodButton
 } from './styles'
+import { open } from '../../stores/reducers/cart'
 
 export const HeaderPrincipal = () => (
   <FundoHeader style={{ backgroundImage: `url(${imageFundo})` }}>
@@ -19,12 +22,22 @@ export const HeaderPrincipal = () => (
   </FundoHeader>
 )
 
-export const HeaderFoods = () => (
-  <FundoHeaderFoods style={{ backgroundImage: `url(${imageFundo})` }}>
-    <ContainerHeaderFoods>
-      <TextFood to={'/'}>Restaurantes</TextFood>
-      <LogoFoods style={{ backgroundImage: `url(${logo})` }}></LogoFoods>
-      <TextFood to={'/'}>0 Produto(s) no carrinho</TextFood>
-    </ContainerHeaderFoods>
-  </FundoHeaderFoods>
-)
+export const HeaderFoods = () => {
+  const dispatch = useDispatch()
+
+  const openCart = () => {
+    dispatch(open())
+  }
+
+  return (
+    <FundoHeaderFoods style={{ backgroundImage: `url(${imageFundo})` }}>
+      <ContainerHeaderFoods>
+        <TextFood to={'/'}>Restaurantes</TextFood>
+        <LogoFoods style={{ backgroundImage: `url(${logo})` }}></LogoFoods>
+        <TextFoodButton type="button" onClick={openCart}>
+          0 Produto(s) no carrinho
+        </TextFoodButton>
+      </ContainerHeaderFoods>
+    </FundoHeaderFoods>
+  )
+}

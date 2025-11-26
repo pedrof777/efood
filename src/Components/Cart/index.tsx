@@ -7,50 +7,30 @@ import {
 } from './styles'
 
 import pizza from '../../assets/images/pizzaMarguerita.png'
+import { useDispatch, useSelector } from 'react-redux'
+import { RootReducer } from '../../stores'
+import { close } from '../../stores/reducers/cart'
+import { formataValor } from '../SaibaMaisList'
 
 const Cart = () => {
+  const { isOpen, items } = useSelector((state: RootReducer) => state.cart)
+
+  const dispatch = useDispatch()
+
+  const closeCart = () => {
+    dispatch(close())
+  }
+
   return (
-    <CartContainer>
-      <Overlay />
+    <CartContainer className={isOpen ? 'is-open' : ''}>
+      <Overlay onClick={closeCart} />
       <AsideContainer>
         <ul>
-          <CartItem>
-            <img src={pizza} alt="Produto adicionado" />
+          <CartItem key={''}>
+            <img src={''} alt="Produto adicionado" />
             <div>
-              <h3>Marguerita</h3>
-              <p>R$65,90</p>
-            </div>
-            <button type="button" />
-          </CartItem>
-          <CartItem>
-            <img src={pizza} alt="Produto adicionado" />
-            <div>
-              <h3>Marguerita</h3>
-              <p>R$65,90</p>
-            </div>
-            <button type="button" />
-          </CartItem>
-          <CartItem>
-            <img src={pizza} alt="Produto adicionado" />
-            <div>
-              <h3>Marguerita</h3>
-              <p>R$65,90</p>
-            </div>
-            <button type="button" />
-          </CartItem>
-          <CartItem>
-            <img src={pizza} alt="Produto adicionado" />
-            <div>
-              <h3>Marguerita</h3>
-              <p>R$65,90</p>
-            </div>
-            <button type="button" />
-          </CartItem>
-          <CartItem>
-            <img src={pizza} alt="Produto adicionado" />
-            <div>
-              <h3>Marguerita</h3>
-              <p>R$65,90</p>
+              <h3>{'c.nome'}</h3>
+              <p>{formataValor(1)} </p>
             </div>
             <button type="button" />
           </CartItem>

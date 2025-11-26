@@ -7,7 +7,7 @@ import { useGetRestaurantQuery } from '../../services/api'
 const SaibaMais = () => {
   const { id } = useParams()
 
-  const { data: restaurantes } = useGetRestaurantQuery()
+  const { data: restaurantes } = useGetRestaurantQuery(id!)
 
   return (
     <>
