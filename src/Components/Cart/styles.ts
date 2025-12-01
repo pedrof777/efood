@@ -38,6 +38,8 @@ export const AsideContainer = styled.aside`
 
   ul {
     margin-bottom: 40px;
+    overflow-y: auto;
+    height: 90%;
   }
 `
 

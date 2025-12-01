@@ -18,10 +18,10 @@ import {
 
 import close from '../../assets/images/close.png'
 import { open, addToCart } from '../../stores/reducers/cart'
-import { Food } from '../../pages/Home'
+import { MenuFood } from '../../pages/Home'
 
 type Props = {
-  food?: Food
+  menuCard?: MenuFood
   image: string
   title: string
   description: string
@@ -35,14 +35,14 @@ const SaibaMaisProduct = ({
   title,
   porcao,
   preco,
-  food
+  menuCard
 }: Props) => {
   const [modalAberto, setModalAberto] = useState(false)
 
   const dispatch = useDispatch()
 
   const addCart = () => {
-    dispatch(addToCart(food!))
+    dispatch(addToCart(menuCard!))
     dispatch(open())
   }
 

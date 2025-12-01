@@ -6,6 +6,11 @@ export const Cores = {
   laranjaMedio: '#FFEBD9'
 }
 
+export const breakPoints = {
+  desktop: '1024px',
+  tablet: '768px'
+}
+
 export const GlobalCss = createGlobalStyle`
   *{
     padding: 0;

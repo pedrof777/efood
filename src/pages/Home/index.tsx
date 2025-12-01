@@ -2,22 +2,24 @@ import { HeaderPrincipal } from '../../Components/Header'
 import Productlist from '../../Components/ProductList'
 import { useGetRestaurantArrayQuery } from '../../services/api'
 
+export type MenuFood = {
+  foto: string
+  preco: number
+  id: number
+  nome: string
+  descricao: string
+  porcao: string
+}
+
 export type Food = {
   id: number
   titulo: string
-  destacado: boolean
+  destacado?: boolean
   tipo: string
   avaliacao: number
   descricao: string
   capa: string
-  cardapio: {
-    foto: string
-    preco: number
-    id: number
-    nome: string
-    descricao: string
-    porcao: string
-  }[]
+  cardapio: MenuFood[]
 }
 
 const Home = () => {

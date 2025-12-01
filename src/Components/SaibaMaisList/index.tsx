@@ -1,4 +1,4 @@
-import { Food } from '../../pages/Home'
+import { Food, MenuFood } from '../../pages/Home'
 import SaibaMaisProduct from '../SaibaMaisProduct'
 import {
   ContainerTitle,
@@ -9,7 +9,8 @@ import {
 } from './styles'
 
 type Props = {
-  foods?: Food
+  foods: Food
+  cardapio: MenuFood[]
 }
 
 export const formataValor = (preco = 0) => {
@@ -19,7 +20,7 @@ export const formataValor = (preco = 0) => {
   }).format(preco)
 }
 
-const SaibaMaisList = ({ foods }: Props) => {
+const SaibaMaisList = ({ foods, cardapio }: Props) => {
   if (!foods || !foods.cardapio) {
     return null
   }
@@ -40,14 +41,15 @@ const SaibaMaisList = ({ foods }: Props) => {
         </FundoImg>
         <div className="container">
           <ListProduct>
-            {foods.cardapio.map((food) => (
+            {cardapio.map((items) => (
               <SaibaMaisProduct
-                key={food.id}
-                description={food.descricao}
-                image={food.foto}
-                title={food.nome}
-                porcao={food.porcao}
-                preco={formataValor(food.preco)}
+                menuCard={items}
+                key={items.id}
+                description={items.descricao}
+                image={items.foto}
+                title={items.nome}
+                porcao={items.porcao}
+                preco={formataValor(items.preco)}
               />
             ))}
           </ListProduct>
