@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { Cores } from '../../styles'
+import { breakPoints, Cores } from '../../styles'
 import { Link } from 'react-router-dom'
 
 export const FundoHeader = styled.header`
@@ -38,6 +38,12 @@ export const ContainerHeaderFoods = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  @media (max-width: ${breakPoints.tablet}) {
+    flex-direction: column;
+    height: 80%;
+    justify-content: space-between;
+  }
 `
 
 export const TextFood = styled(Link)`

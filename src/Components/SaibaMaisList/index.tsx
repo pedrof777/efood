@@ -5,6 +5,7 @@ import {
   FundoImg,
   ListProduct,
   NameRestaurante,
+  Section,
   TitleCategory
 } from './styles'
 
@@ -26,7 +27,7 @@ const SaibaMaisList = ({ foods, cardapio }: Props) => {
   }
   return (
     <>
-      <section>
+      <Section>
         <FundoImg
           style={{
             backgroundImage: `
@@ -54,7 +55,7 @@ const SaibaMaisList = ({ foods, cardapio }: Props) => {
             ))}
           </ListProduct>
         </div>
-      </section>
+      </Section>
     </>
   )
 }

@@ -1,4 +1,13 @@
 import styled from 'styled-components'
+import { breakPoints } from '../../styles'
+
+export const Section = styled.section`
+  .container {
+    @media (max-width: ${breakPoints.desktop}) {
+      max-width: 80%;
+    }
+  }
+`
 
 export const FundoImg = styled.div`
   height: 280px;
@@ -30,4 +39,12 @@ export const ListProduct = styled.ul`
   grid-template-columns: 1fr 1fr 1fr;
   gap: 32px;
   margin: 56px 0 120px 0;
+
+  @media (max-width: ${breakPoints.desktop}) {
+    gap: 25px;
+  }
+
+  @media (max-width: ${breakPoints.tablet}) {
+    grid-template-columns: 1fr 1fr;
+  }
 `

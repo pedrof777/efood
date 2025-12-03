@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { Cores } from '../../styles'
+import { breakPoints, Cores } from '../../styles'
 
 export const ContainerProduct = styled.div`
   background-color: ${Cores.laranja};
@@ -12,6 +12,10 @@ export const ContainerImg = styled.div`
   img {
     width: 100%;
     height: 100%;
+  }
+
+  @media (max-width: ${breakPoints.desktop}) {
+    width: unset;
   }
 `
 export const ContainerInfo = styled.div`
@@ -67,6 +71,10 @@ export const ModalContent = styled.div`
   z-index: 1;
   display: flex;
   background-color: ${Cores.laranja};
+
+  @media (max-width: ${breakPoints.desktop}) {
+    max-width: 80%;
+  }
 `
 export const ModalImg = styled.div`
   margin: 32px 24px 32px 16px;

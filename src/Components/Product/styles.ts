@@ -1,10 +1,14 @@
 import styled from 'styled-components'
-import { Cores } from '../../styles'
+import { breakPoints, Cores } from '../../styles'
 
 export const ContainerCard = styled.div`
   width: 472px;
   height: 398px;
   position: relative;
+
+  @media (max-width: ${breakPoints.tablet}) {
+    width: unset;
+  }
 `
 export const ContainerImg = styled.div`
   width: 472px;
@@ -13,6 +17,10 @@ export const ContainerImg = styled.div`
   img {
     width: 100%;
     height: 100%;
+  }
+
+  @media (max-width: ${breakPoints.tablet}) {
+    width: unset;
   }
 `
 
