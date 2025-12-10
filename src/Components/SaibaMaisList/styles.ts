@@ -45,6 +45,7 @@ export const ListProduct = styled.ul`
   }
 
   @media (max-width: ${breakPoints.tablet}) {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
+    justify-items: center;
   }
 `

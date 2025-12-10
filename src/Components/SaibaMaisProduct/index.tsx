@@ -13,6 +13,7 @@ import {
   ModalContent,
   ModalImg,
   ModalText,
+  ModalTitle,
   TitleInfo
 } from './styles'
 
@@ -70,7 +71,7 @@ const SaibaMaisProduct = ({
               <img src={image} alt="pizza" />
             </ModalImg>
             <ModalText>
-              <p>{title}</p>
+              <ModalTitle>{title}</ModalTitle>
               <p>
                 {description}
                 <br />

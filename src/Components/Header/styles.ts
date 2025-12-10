@@ -39,6 +39,10 @@ export const ContainerHeaderFoods = styled.div`
   justify-content: space-between;
   align-items: center;
 
+  @media (max-width: ${breakPoints.desktop}) {
+    max-width: 80%;
+  }
+
   @media (max-width: ${breakPoints.tablet}) {
     flex-direction: column;
     height: 80%;

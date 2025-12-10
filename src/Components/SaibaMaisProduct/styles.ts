@@ -3,6 +3,10 @@ import { breakPoints, Cores } from '../../styles'
 
 export const ContainerProduct = styled.div`
   background-color: ${Cores.laranja};
+
+  @media (max-width: ${breakPoints.tablet}) {
+    width: 320px;
+  }
 `
 export const ContainerImg = styled.div`
   width: 304px;
@@ -45,6 +49,9 @@ export const Button = styled.button`
   text-align: center;
   padding: 4px 0;
 `
+
+//Modal
+
 export const Modal = styled.div`
   position: fixed;
   top: 0;
@@ -75,24 +82,50 @@ export const ModalContent = styled.div`
   @media (max-width: ${breakPoints.desktop}) {
     max-width: 80%;
   }
+
+  @media (max-width: ${breakPoints.tablet}) {
+    flex-direction: column;
+  }
 `
 export const ModalImg = styled.div`
   margin: 32px 24px 32px 16px;
 
+  @media (max-width: ${breakPoints.tablet}) {
+    margin: 16px 32px 24px 32px;
+  }
+
   img {
+    @media (max-width: ${breakPoints.tablet}) {
+      width: 100%;
+      height: 100%;
+    }
+
     width: 280px;
     height: 280px;
     object-fit: cover;
   }
 `
+
+export const ModalTitle = styled.h1`
+  font-size: 18px;
+  line-height: 100%;
+  font-weigth: bold;
+`
+
 export const ModalText = styled.div`
   color: #fff;
   margin: 32px 32px 0 0;
+
+  @media (max-width: ${breakPoints.tablet}) {
+    margin: 0 32px;
+    margin-bottom: 32px;
+  }
 
   p {
     margin: 16px 0;
     font-size: 14px;
     line-height: 22px;
+    font
   }
 `
 export const ButtonModal = styled(Button)`

@@ -7,6 +7,7 @@ export const ContainerCard = styled.div`
   position: relative;
 
   @media (max-width: ${breakPoints.tablet}) {
+    max-width: 472px;
     width: unset;
   }
 `
