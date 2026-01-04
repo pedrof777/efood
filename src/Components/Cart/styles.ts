@@ -34,12 +34,16 @@ export const AsideContainer = styled.aside`
   max-width: 360px;
   width: 100%;
   z-index: 1;
-  padding: 40px 8px;
+  padding: 32px 8px;
 
   ul {
     margin-bottom: 40px;
     overflow-y: auto;
     height: 90%;
+
+    .emptyText {
+      text-align: center;
+    }
   }
 `
 

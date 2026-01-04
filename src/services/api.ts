@@ -3,7 +3,7 @@ import { Food } from '../pages/Home'
 
 const api = createApi({
   baseQuery: fetchBaseQuery({
-    baseUrl: 'https://api-ebac.vercel.app/api/efood'
+    baseUrl: 'https://fake-api-havokk.vercel.app/api/efood'
   }),
   endpoints: (builder) => ({
     getRestaurantArray: builder.query<Food[], void>({

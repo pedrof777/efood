@@ -2,6 +2,7 @@ import { HeaderFoods } from '../../Components/Header'
 import SaibaMaisList from '../../Components/SaibaMaisList'
 import { useParams } from 'react-router-dom'
 import Cart from '../../Components/Cart'
+
 import { useGetRestaurantQuery } from '../../services/api'
 
 const SaibaMais = () => {
@@ -15,10 +16,9 @@ const SaibaMais = () => {
   return (
     <>
       <HeaderFoods />
-      <>
-        <SaibaMaisList foods={restaurantes} cardapio={restaurantes.cardapio} />
-        <Cart />
-      </>
+
+      <SaibaMaisList foods={restaurantes} cardapio={restaurantes.cardapio} />
+      <Cart />
     </>
   )
 }
