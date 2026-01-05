@@ -9,8 +9,8 @@ export const ButtonDefault = styled.button`
   font-weight: 700;
   font-size: 14px;
   text-align: center;
-  color: ${Cores.laranjaMedio}
-  backgorund-color: ${Cores.laranja}
+  color: ${Cores.laranjaMedio};
+  background-color: ${Cores.laranja};
 `
 
 export const ButtonLink = styled(Link)`

@@ -3,7 +3,8 @@ import { createGlobalStyle } from 'styled-components'
 export const Cores = {
   laranja: '#E66767',
   laranjaClaro: '#FFF8F2',
-  laranjaMedio: '#FFEBD9'
+  laranjaMedio: '#FFEBD9',
+  gray: '#4B4B4B'
 }
 
 export const breakPoints = {

@@ -24,6 +24,7 @@ export const ContainerInput = styled.div`
   }
 
   input {
+    width: 100%;
     outline: none;
     border: none;
     font-size: 14px;
@@ -31,6 +32,23 @@ export const ContainerInput = styled.div`
     background-color: ${Cores.laranjaMedio};
     color: ${Cores.gray};
     padding: 8px;
+  }
+
+  &.containerRow {
+    flex-direction: row;
+
+    .containerCodeCard {
+      margin-left: 30px;
+      width: 87px;
+    }
+
+    .containerYearExpires {
+      margin-left: 34px;
+
+      input {
+        width: 155px;
+      }
+    }
   }
 `
 
