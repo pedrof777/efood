@@ -1,31 +1,19 @@
-import {
-  AsideContainer,
-  CartContainer,
-  CartItem,
-  ContainerPrices,
-  Overlay
-} from './styles'
-
 import { useDispatch, useSelector } from 'react-redux'
+import { useState } from 'react'
+
+import Checkout from '../../pages/Checkout'
+
 import { RootReducer } from '../../stores'
 import { close, removeToCart } from '../../stores/reducers/cart'
-import { formataValor } from '../SaibaMaisList'
-import { useState } from 'react'
-import Checkout from '../../pages/Checkout'
-import Delivery from '../../pages/Delivery'
+import { formataValor, totalPrice } from '../../utils'
+
+import * as S from './styles'
 
 const Cart = () => {
   const { isOpen, itemsCardapio } = useSelector(
     (state: RootReducer) => state.cart
   )
-
-  const [finish, setFinish] = useState(true)
-
-  const totalPrice = () => {
-    return itemsCardapio.reduce((acumulador, valorTotal) => {
-      return (acumulador += valorTotal.preco)
-    }, 0)
-  }
+  const [finish, setFinish] = useState(false)
 
   const dispatch = useDispatch()
 
@@ -38,15 +26,15 @@ const Cart = () => {
   }
 
   return (
-    <CartContainer className={isOpen ? 'is-open' : ''}>
-      <Overlay onClick={closeCart} />
-      <AsideContainer>
+    <S.CartContainer className={isOpen ? 'is-open' : ''}>
+      <S.Overlay onClick={closeCart} />
+      <S.AsideContainer>
         {!finish ? (
           <>
             <ul>
               {itemsCardapio.length > 0 ? (
                 itemsCardapio.map((card, idx) => (
-                  <CartItem key={`${card.id}-${idx}`}>
+                  <S.CartItem key={`${card.id}-${idx}`}>
                     <img src={card.foto} alt={card.nome} />
                     <div>
                       <h3>{card.nome}</h3>
@@ -56,24 +44,36 @@ const Cart = () => {
                       type="button"
                       onClick={() => removerProduct(card.id)}
                     />
-                  </CartItem>
+                  </S.CartItem>
                 ))
               ) : (
                 <li className="emptyText">Não há produtos no Carrinho</li>
               )}
             </ul>
-            <ContainerPrices>
-              <p>
-                Valor total <span>{formataValor(totalPrice())} </span>
-              </p>
-              <button type="button">Continuar com a entrega</button>
-            </ContainerPrices>
+            <S.ContainerPrices>
+              {itemsCardapio.length > 0 && (
+                <>
+                  <p>
+                    Valor total{' '}
+                    <span>{formataValor(totalPrice(itemsCardapio))} </span>
+                  </p>
+                  <button
+                    onClick={() => {
+                      setFinish(!finish)
+                    }}
+                    type="button"
+                  >
+                    Continuar com a entrega
+                  </button>
+                </>
+              )}
+            </S.ContainerPrices>
           </>
         ) : (
-          <Delivery />
+          <Checkout onClick={() => setFinish(!finish)} />
         )}
-      </AsideContainer>
-    </CartContainer>
+      </S.AsideContainer>
+    </S.CartContainer>
   )
 }
 

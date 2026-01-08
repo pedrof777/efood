@@ -1,25 +1,12 @@
 import { useState } from 'react'
 import { useDispatch } from 'react-redux'
 
-import {
-  Button,
-  ButtonModal,
-  Close,
-  ContainerImg,
-  ContainerInfo,
-  ContainerProduct,
-  Description,
-  Modal,
-  ModalContent,
-  ModalImg,
-  ModalText,
-  ModalTitle,
-  TitleInfo
-} from './styles'
-
-import close from '../../assets/images/close.png'
 import { open, addToCart } from '../../stores/reducers/cart'
 import { MenuFood } from '../../pages/Home'
+
+import close from '../../assets/images/close.png'
+
+import * as S from './styles'
 
 type Props = {
   menuCard?: MenuFood
@@ -39,52 +26,53 @@ const SaibaMaisProduct = ({
   menuCard
 }: Props) => {
   const [modalAberto, setModalAberto] = useState(false)
-
   const dispatch = useDispatch()
 
   const addCart = () => {
-    dispatch(addToCart(menuCard!))
-    dispatch(open())
+    if (menuCard) {
+      dispatch(addToCart(menuCard))
+      dispatch(open())
+    }
   }
 
   return (
     <>
-      <ContainerProduct>
-        <ContainerImg>
+      <S.ContainerProduct>
+        <S.ContainerImg>
           <img src={image} alt="pizza " />
-        </ContainerImg>
-        <ContainerInfo>
-          <TitleInfo>{title}</TitleInfo>
-          <Description>{description}</Description>
-          <Button onClick={() => setModalAberto(true)}>
+        </S.ContainerImg>
+        <S.ContainerInfo>
+          <S.TitleInfo>{title}</S.TitleInfo>
+          <S.Description>{description}</S.Description>
+          <S.Button onClick={() => setModalAberto(true)}>
             Adicionar ao carrinho
-          </Button>
-        </ContainerInfo>
-      </ContainerProduct>
+          </S.Button>
+        </S.ContainerInfo>
+      </S.ContainerProduct>
       {modalAberto && (
-        <Modal>
-          <ModalContent>
-            <Close onClick={() => setModalAberto(false)}>
+        <S.Modal>
+          <S.ModalContent>
+            <S.Close onClick={() => setModalAberto(false)}>
               <img src={close} alt="Botao de fechar" />
-            </Close>
-            <ModalImg>
+            </S.Close>
+            <S.ModalImg>
               <img src={image} alt="pizza" />
-            </ModalImg>
-            <ModalText>
-              <ModalTitle>{title}</ModalTitle>
+            </S.ModalImg>
+            <S.ModalText>
+              <S.ModalTitle>{title}</S.ModalTitle>
               <p>
                 {description}
                 <br />
                 <br />
                 <span>Serve: {porcao}</span>
               </p>
-              <ButtonModal type="button" onClick={addCart}>
+              <S.ButtonModal type="button" onClick={addCart}>
                 Adicionar ao carrinho - <span>{preco}</span>
-              </ButtonModal>
-            </ModalText>
-          </ModalContent>
+              </S.ButtonModal>
+            </S.ModalText>
+          </S.ModalContent>
           <div onClick={() => setModalAberto(false)} className="overlay"></div>
-        </Modal>
+        </S.Modal>
       )}
     </>
   )

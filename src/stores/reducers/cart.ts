@@ -33,9 +33,12 @@ const cartSlice = createSlice({
       if (index !== -1) {
         state.itemsCardapio.splice(index, 1)
       }
+    },
+    clear: (state) => {
+      state.itemsCardapio = []
     }
   }
 })
 
-export const { open, close, addToCart, removeToCart } = cartSlice.actions
+export const { open, close, addToCart, removeToCart, clear } = cartSlice.actions
 export default cartSlice.reducer

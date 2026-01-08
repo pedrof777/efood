@@ -1,7 +1,9 @@
-import * as S from './styles'
 import { ButtonLink } from '../Button/styles'
 import { TagContainer } from '../Tag/styles'
+
 import estrela from '../../assets/images/estrela.svg'
+
+import * as S from './styles'
 
 type Props = {
   image: string

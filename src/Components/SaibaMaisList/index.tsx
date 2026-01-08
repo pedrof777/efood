@@ -1,24 +1,13 @@
-import { Food, MenuFood } from '../../pages/Home'
 import SaibaMaisProduct from '../SaibaMaisProduct'
-import {
-  ContainerTitle,
-  FundoImg,
-  ListProduct,
-  NameRestaurante,
-  Section,
-  TitleCategory
-} from './styles'
+
+import { Food, MenuFood } from '../../pages/Home'
+import { formataValor } from '../../utils'
+
+import * as S from './styles'
 
 type Props = {
   foods: Food
   cardapio: MenuFood[]
-}
-
-export const formataValor = (preco = 0) => {
-  return new Intl.NumberFormat('pt-br', {
-    style: 'currency',
-    currency: 'BRL'
-  }).format(preco)
 }
 
 const SaibaMaisList = ({ foods, cardapio }: Props) => {
@@ -27,21 +16,21 @@ const SaibaMaisList = ({ foods, cardapio }: Props) => {
   }
   return (
     <>
-      <Section>
-        <FundoImg
+      <S.Section>
+        <S.FundoImg
           style={{
             backgroundImage: `
             linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
             url(${foods.capa})`
           }}
         >
-          <ContainerTitle className="container">
-            <TitleCategory>{foods.tipo}</TitleCategory>
-            <NameRestaurante>{foods.titulo}</NameRestaurante>
-          </ContainerTitle>
-        </FundoImg>
+          <S.ContainerTitle className="container">
+            <S.TitleCategory>{foods.tipo}</S.TitleCategory>
+            <S.NameRestaurante>{foods.titulo}</S.NameRestaurante>
+          </S.ContainerTitle>
+        </S.FundoImg>
         <div className="container">
-          <ListProduct>
+          <S.ListProduct>
             {cardapio.map((items) => (
               <SaibaMaisProduct
                 menuCard={items}
@@ -53,9 +42,9 @@ const SaibaMaisList = ({ foods, cardapio }: Props) => {
                 preco={formataValor(items.preco)}
               />
             ))}
-          </ListProduct>
+          </S.ListProduct>
         </div>
-      </Section>
+      </S.Section>
     </>
   )
 }

@@ -3,6 +3,8 @@ import { breakPoints, Cores } from '../../styles'
 
 export const ContainerProduct = styled.div`
   background-color: ${Cores.laranja};
+  display: flex;
+  flex-direction: column;
 
   @media (max-width: ${breakPoints.tablet}) {
     width: 320px;
@@ -24,6 +26,9 @@ export const ContainerImg = styled.div`
 `
 export const ContainerInfo = styled.div`
   margin: 0 8px 8px 8px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
 `
 
 export const TitleInfo = styled.p`
@@ -48,6 +53,7 @@ export const Button = styled.button`
   font-weight: 700;
   text-align: center;
   padding: 4px 0;
+  margin-top: auto;
 `
 
 //Modal

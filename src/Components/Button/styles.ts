@@ -11,6 +11,7 @@ export const ButtonDefault = styled.button`
   text-align: center;
   color: ${Cores.laranjaMedio};
   background-color: ${Cores.laranja};
+  cursor: pointer;
 `
 
 export const ButtonLink = styled(Link)`

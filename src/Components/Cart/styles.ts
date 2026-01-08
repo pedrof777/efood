@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-import { Cores } from '../../styles'
+import { breakPoints, Cores } from '../../styles'
 
 import lixeira from '../../assets/images/lixeira.png'
 
@@ -35,6 +35,10 @@ export const AsideContainer = styled.aside`
   width: 100%;
   z-index: 1;
   padding: 32px 8px;
+
+  @media (max-width: ${breakPoints.tablet}) {
+    width: 80%;
+  }
 
   ul {
     margin-bottom: 40px;
@@ -81,6 +85,7 @@ export const CartItem = styled.li`
     position: absolute;
     bottom: 8px;
     right: 8px;
+    cursor: pointer;
   }
 `
 export const ContainerPrices = styled.div`

@@ -9,6 +9,7 @@ export const ContainerCard = styled.div`
   @media (max-width: ${breakPoints.tablet}) {
     max-width: 472px;
     width: unset;
+    height: auto;
   }
 `
 export const ContainerImg = styled.div`

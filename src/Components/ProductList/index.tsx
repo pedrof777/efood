@@ -1,5 +1,7 @@
-import { Food } from '../../pages/Home'
 import Produto from '../Product'
+
+import { Food } from '../../pages/Home'
+
 import { ContainerProduct } from './styles'
 
 type Props = {
