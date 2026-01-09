@@ -42,10 +42,16 @@ export const ListProduct = styled.ul`
 
   @media (max-width: ${breakPoints.desktop}) {
     gap: 25px;
+    margin: 56px 0 56px 0;
   }
 
   @media (max-width: ${breakPoints.tablet}) {
     grid-template-columns: 1fr;
+    justify-items: center;
+  }
+
+  @media (min-width: ${breakPoints.tablet}) and (max-width: 1023px) {
+    grid-template-columns: 1fr 1fr;
     justify-items: center;
   }
 `

@@ -5,10 +5,6 @@ export const ContainerProduct = styled.div`
   background-color: ${Cores.laranja};
   display: flex;
   flex-direction: column;
-
-  @media (max-width: ${breakPoints.tablet}) {
-    width: 320px;
-  }
 `
 export const ContainerImg = styled.div`
   width: 304px;
@@ -89,6 +85,10 @@ export const ModalContent = styled.div`
     max-width: 80%;
   }
 
+  @media (max-width: ${breakPoints.desktop}) {
+    flex-direction: column;
+  }
+
   @media (max-width: ${breakPoints.tablet}) {
     flex-direction: column;
   }
@@ -96,11 +96,20 @@ export const ModalContent = styled.div`
 export const ModalImg = styled.div`
   margin: 32px 24px 32px 16px;
 
+  @media (max-width: ${breakPoints.desktop}) {
+    margin: 8px 16px 16px 16px;
+  }
+
   @media (max-width: ${breakPoints.tablet}) {
-    margin: 16px 32px 24px 32px;
+    margin: 8px 16px 16px 16px;
   }
 
   img {
+    @media (max-width: ${breakPoints.desktop}) {
+      width: 100%;
+      height: 100%;
+    }
+
     @media (max-width: ${breakPoints.tablet}) {
       width: 100%;
       height: 100%;
@@ -115,15 +124,20 @@ export const ModalImg = styled.div`
 export const ModalTitle = styled.h1`
   font-size: 18px;
   line-height: 100%;
-  font-weigth: bold;
+  font-weight: bold;
 `
 
 export const ModalText = styled.div`
   color: #fff;
   margin: 32px 32px 0 0;
 
+  @media (max-width: ${breakPoints.desktop}) {
+    margin: 0 16px;
+    margin-bottom: 32px;
+  }
+
   @media (max-width: ${breakPoints.tablet}) {
-    margin: 0 32px;
+    margin: 0 16px;
     margin-bottom: 32px;
   }
 

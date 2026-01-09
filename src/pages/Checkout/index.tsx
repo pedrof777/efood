@@ -45,15 +45,15 @@ const Checkout = ({ onClick }: Props) => {
         .required(),
       address: Yup.string().required(),
       city: Yup.string().required(),
-      postalCode: Yup.string().max(9).required(),
+      postalCode: Yup.string().min(9).max(9).required(),
       numberHouse: Yup.string().required(),
       nameCard: Yup.string()
         .min(5, 'O nome precisa ter pelo menos 5 caracteres')
         .required(),
-      numberCard: Yup.string().max(19).required(),
-      cardCode: Yup.string().max(3).required(),
-      yearExpire: Yup.string().max(2).required(),
-      expireMonth: Yup.string().max(2).required()
+      numberCard: Yup.string().min(19).max(19).required(),
+      cardCode: Yup.string().min(3).max(3).required(),
+      yearExpire: Yup.string().min(2).max(2).required(),
+      expireMonth: Yup.string().min(2).max(2).required()
     }),
     onSubmit: (values) => {
       purchase({
@@ -213,7 +213,7 @@ const Checkout = ({ onClick }: Props) => {
                 />
               </S.ContainerInput>
               <S.ContainerButton>
-                {!form.values.postalCode || !form.values.numberHouse ? (
+                {form.errors.postalCode || !form.values.numberHouse ? (
                   ''
                 ) : (
                   <Button
@@ -315,8 +315,10 @@ const Checkout = ({ onClick }: Props) => {
               </S.ContainerInput>
               <S.ContainerButton>
                 {!form.values.nameCard ||
-                !form.values.cardCode ||
-                !form.values.yearExpire ? (
+                form.errors.numberCard ||
+                form.errors.cardCode ||
+                form.errors.expireMonth ||
+                form.errors.yearExpire ? (
                   ''
                 ) : (
                   <Button

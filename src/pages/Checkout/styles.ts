@@ -1,6 +1,6 @@
 import styled from 'styled-components'
-import { Cores } from '../../styles'
-import { ButtonDefault, ButtonLink } from '../../Components/Button/styles'
+import { breakPoints, Cores } from '../../styles'
+import { ButtonDefault } from '../../Components/Button/styles'
 
 export const Container = styled.div`
   h3 {
@@ -13,11 +13,12 @@ export const Container = styled.div`
   .overlay {
     position: absolute;
     top: 0;
-    right: 360px;
+    left: 0;
     width: 100%;
     height: 100%;
     background-color: #000;
     opacity: 0.2;
+    z-index: -1;
   }
 
   div {
@@ -80,6 +81,9 @@ export const ContainerInput = styled.div`
       margin-left: 34px;
 
       input {
+        @media (max-width: ${breakPoints.tablet}) {
+          width: 100%;
+        }
         width: 155px;
       }
     }
