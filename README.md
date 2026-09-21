@@ -1,46 +1,39 @@
-# Getting Started with Create React App
+# 🍝 eFood
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Aplicação de delivery de comida (e-commerce), inspirada em plataformas como iFood, 
+desenvolvida com React e TypeScript.
 
-## Available Scripts
+🔗 **Demo:** https://efood-six-roan.vercel.app
 
-In the project directory, you can run:
+## 📋 Funcionalidades
 
-### `npm start`
+- Vitrine com múltiplos restaurantes, cada um com nota de avaliação e tags de categoria (ex: italiana, árabe) e destaque ("Destaque da semana")
+- Página individual de cada restaurante com cardápio de pratos (imagem, descrição e preço)
+- Carrinho de compras com cálculo de valor total
+- Checkout em duas etapas:
+  - **Entrega:** nome do destinatário, endereço, cidade, CEP, número e complemento
+  - **Pagamento:** dados do cartão (nome, número, CVV, validade)
+- Navegação fluida entre etapas do checkout (carrinho → entrega → pagamento)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## 🛠️ Tecnologias
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- **React** (Create React App)
+- **TypeScript**
+- Consumo de API (fetch) para dados de restaurantes e produtos
 
-### `npm test`
+## 🚀 Como rodar
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+\`\`\`bash
+git clone https://github.com/pedrof777/efood.git
+cd efood
+npm install
+npm start
+\`\`\`
 
-### `npm run build`
+Acesse em `http://localhost:3000`.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 📌 Sobre o projeto
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+Projeto desenvolvido para praticar consumo de API, gerenciamento de estado 
+(carrinho de compras) e fluxo de checkout em múltiplas etapas com React e TypeScript. 
+Simulação de compra — sem processamento real de pagamento.
