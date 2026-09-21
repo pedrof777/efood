@@ -23,12 +23,12 @@ desenvolvida com React e TypeScript.
 
 ## 🚀 Como rodar
 
-\`\`\`bash
+```bash
 git clone https://github.com/pedrof777/efood.git
 cd efood
 npm install
 npm start
-\`\`\`
+```
 
 Acesse em `http://localhost:3000`.
 
